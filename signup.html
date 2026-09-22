@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NEXUS | Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-box">
+      <div class="auth-header">
+        <h2>NEXUS</h2>
+        <p>Create your account</p>
+      </div>
+
+      <form onsubmit="handleSignup(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+            autocomplete="name"
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="email@address.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="••••••••"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <button type="submit" class="auth-btn">Create Account</button>
+      </form>
+
+      <p class="auth-switch">
+        Already have an account? <a href="login.html">Sign In</a>
+      </p>
+
+      <a href="index.html" class="home-link">← Back to Shop</a>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        updateProfile,
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB1KPu8CgaeLEstwqWHB6GLkkhUBRUrNGU",
+        authDomain: "nexus-rentals-772c5.firebaseapp.com",
+        projectId: "nexus-rentals-772c5",
+        storageBucket: "nexus-rentals-772c5.firebasestorage.app",
+        messagingSenderId: "531412802677",
+        appId: "1:531412802677:web:12c22bcd60fa31af1fec3c",
+      };
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.handleSignup = async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        try {
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password,
+          );
+
+          // Save name in Firebase profile
+          await updateProfile(userCredential.user, {
+            displayName: name,
+          });
+
+          window.location.href = "index1.html";
+        } catch (error) {
+          if (error.code === "auth/email-already-in-use") {
+            alert("Email already exists.");
+          } else {
+            alert(error.message);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

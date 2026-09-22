@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NEXUS | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="logo"><h1>NEXUS</h1></div>
+
+      <div class="nav-links">
+        <a href="#hero">HOME</a>
+        <a href="cart.html">SAVED ITEMS</a>
+        <a href="#orders">ORDERS</a>
+        <a href="#contact">CONTACT</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="#profile">PROFILE</a>
+      </div>
+
+      <div class="auth-controls">
+        <a href="#" onclick="logout()" class="btn-gold">LOGOUT</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="dash-hero">
+      <div class="hero-center">
+        <h1 id="welcomeText"></h1>
+        <p class="dash-hero-tag">"Your curated luxury wardrobe starts here"</p>
+        <a href="collection.html" class="btn-gold">Browse Collection</a>
+      </div>
+    </section>
+
+    <!-- RENTALS -->
+    <section id="orders" class="dash-section center-section">
+      <h2>My Orders</h2>
+      <div id="ordersContainer"></div>
+    </section>
+
+    <!-- RECOMMEND -->
+    <section class="dash-section center-section">
+      <h2>Recommended For You</h2>
+
+      <div class="recommend-strip">
+        <div class="recommend-card">
+          <img src="rec1.jpg" alt="" />
+          <h4>Wedding Guest</h4>
+        </div>
+
+        <div class="recommend-card">
+          <img src="rec2.jpg" alt="" />
+          <h4>Office Chic</h4>
+        </div>
+
+        <div class="recommend-card">
+          <img src="rec3.jpg" alt="" />
+          <h4>Festive Wear</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq center-section">
+      <h2>Help & FAQs</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Is the dress cleaned before delivery?</div>
+        <div class="faq-answer">
+          Yes. Every outfit is professionally dry cleaned and sanitized before
+          delivery.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What if the size doesn’t fit?</div>
+        <div class="faq-answer">
+          You can request a size change up to 24 hours before delivery time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you provide same day delivery?</div>
+        <div class="faq-answer">
+          Yes, same day delivery is available depending on stock and location.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact center-section">
+      <h2>Contact Us</h2>
+
+      <div class="contact-grid">
+        <div>
+          <h4>Customer Support</h4>
+          <p>Email: support@nexusrentals.com</p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+
+        <div>
+          <h4>Office Address</h4>
+          <p>NEXUS Rentals Pvt Ltd</p>
+          <p>MG Road, Bengaluru, India</p>
+        </div>
+
+        <div>
+          <h4>Working Hours</h4>
+          <p>Mon - Sat: 9 AM - 8 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 NEXUS RENTALS. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="index1.js"></script>
+  </body>
+</html>

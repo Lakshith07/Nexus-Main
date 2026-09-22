@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NEXUS | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-box">
+      <div class="auth-header">
+        <h2>NEXUS</h2>
+        <p>Sign in to your account</p>
+      </div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="email@address.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+        <button type="submit" class="auth-btn">Sign In</button>
+      </form>
+
+      <p class="auth-switch">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </p>
+
+      <a href="index.html" class="home-link">← Back to Shop</a>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "",
+        authDomain: "nexus-rentals-772c5.firebaseapp.com",
+        projectId: "nexus-rentals-772c5",
+        storageBucket: "nexus-rentals-772c5.firebasestorage.app",
+        messagingSenderId: "531412802677",
+        appId: "1:531412802677:web:12c22bcd60fa31af1fec3c",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.handleLogin = async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+          window.location.href = "index1.html";
+        } catch (error) {
+          alert("Invalid email or password");
+        }
+      };
+    </script>
+  </body>
+</html>
