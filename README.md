@@ -7,8 +7,8 @@
 
 ## 🔗 Live Application & Demo Links
 
-- 🌐 **Live Demo URL:** [https://nexus-main.vercel.app](https://nexus-main.vercel.app) *(Replace with your active Vercel domain)*
-- 🎬 **Video Screencast / Walkthrough:** [Watch Product Demo on  Loom](](https://www.loom.com/share/3de89187927549de8074e6c6dcd85cc7)) *(Add your Loom or YouTube video link here)*
+- 🌐 **Live Demo URL:** [https://nexus-main.vercel.app](https://nexus-main.vercel.app) 
+- 🎬 **Video Screencast / Walkthrough:** [Watch Product Demo on  Loom](https://www.loom.com/share/3de89187927549de8074e6c6dcd85cc7) 
 - 💻 **GitHub Repository:** [https://github.com/Lakshith07/Nexus-Main](https://github.com/Lakshith07/Nexus-Main)
 
 ---
