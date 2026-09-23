@@ -1,8 +1,13 @@
 {
-  "buildCommand": "cd client && npm install && npm run build",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build --workspace client",
   "outputDirectory": "client/dist",
-  "installCommand": "npm install && cd server && npm install && cd ..",
   "framework": null,
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "server/**"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/(.*)", "destination": "/index.html" }
