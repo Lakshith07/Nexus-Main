@@ -1,7 +1,7 @@
 // server/routes/auth.js
 const express = require('express');
 const passport = require('passport');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const router = express.Router();
 const db = require('../db');
 
